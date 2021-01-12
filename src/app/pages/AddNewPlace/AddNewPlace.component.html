@@ -1,0 +1,104 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <nb-card>
+      <nb-card-header>Introduzir novo terreno</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="novoTerrenoForm" (ngSubmit)="submeterLeitor(novoTerrenoForm.value)">
+          <div class="form-group row">
+            <label for="inputEmail1" class="label col-sm-3 col-form-label">Rua</label>
+            <div class="col-sm-9">
+              <input nbInput fullWidth id="inputEmail1" formControlName="Rua" placeholder="Rua">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword2" class="label col-sm-3 col-form-label">Numero de Porta</label>
+            <div class="col-sm-9">
+              <input type="number" nbInput fullWidth id="inputPassword2" formControlName="NumeroDePorta" placeholder="Numero de Porta">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword2" class="label col-sm-3 col-form-label">Codigo Postal</label>
+            <div class="col-sm-9">
+              <input nbInput fullWidth id="inputPassword2" formControlName="CodigoPostal" placeholder="Codigo Postal">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword2" class="label col-sm-3 col-form-label">Concelho</label>
+            <div class="col-sm-9">
+              <input nbInput fullWidth id="inputPassword2" formControlName="Concelho" placeholder="Concelho">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword2" class="label col-sm-3 col-form-label">Distrito</label>
+            <div class="col-sm-9">
+              <input nbInput fullWidth id="inputPassword2" formControlName="Distrito" placeholder="Distrito">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 label">Irá implementar sensores reais no terreno?</label>
+            <div class="col-sm-9">
+              <nb-radio-group formControlName="IsRealSensor">
+                <nb-radio value="Sim">Sim</nb-radio>
+                <nb-radio value="Nao">Não</nb-radio>
+                <nb-radio disabled>Ainda não sei</nb-radio>
+              </nb-radio-group>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 label">Em quantas zonas pretende dividir o terreno?</label>
+            <div class="col-sm-9">
+              <nb-radio-group formControlName="NumeroDeZonas">
+                <nb-radio value=1>1</nb-radio>
+                <nb-radio value=2>2</nb-radio>
+                <nb-radio value=3>3</nb-radio>
+                <nb-radio value=4>4</nb-radio>
+              </nb-radio-group>
+            </div>
+          </div>
+          <button type="submit" nbButton status="primary">Submit</button>
+
+        </form>
+      </nb-card-body>
+    </nb-card>
+
+  </div>
+
+  <div class="col-md-6">
+    <nb-card>
+      <nb-card-header>Introduzir novo leitor/apressor</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="novoLeitorForm" (ngSubmit)="submeterLeitor(novoLeitorForm.value)">
+          <div class="form-group row">
+            <label for="inputEmail1" class="label col-sm-3 col-form-label">Rua</label>
+            <div class="col-sm-9">
+              <input nbInput fullWidth id="inputEmail1" formControlName="Rua" placeholder="Rua">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 label">Zona</label>
+            <div class="col-sm-3">
+              <nb-radio-group formControlName="Zona">
+                <nb-radio value="1">1</nb-radio>
+                <nb-radio value="2">2</nb-radio>
+                <nb-radio value="3">3</nb-radio>
+                <nb-radio value="4">4</nb-radio>
+              </nb-radio-group>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 label">Tipo</label>
+            <div class="col-sm-3">
+              <nb-radio-group formControlName="Tipo">
+                <nb-radio value="Sensor">Sensor</nb-radio>
+                <nb-radio value="Aspressor">Aspressor</nb-radio>
+              </nb-radio-group>
+            </div>
+          </div>
+          <button type="submit" nbButton status="primary">Submit</button>
+
+        </form>
+      </nb-card-body>
+    </nb-card>
+
+
