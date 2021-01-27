@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { MarkerService } from 'app/@core/mock/marker.service';
 
 import * as L from 'leaflet';
@@ -32,6 +32,15 @@ L.Marker.prototype.options.icon = iconDefault;
   `,
 })
 export class LeafletComponent implements AfterViewInit {
+  @HostListener('document:click', ['$event']) 
+  clickout(event) 
+  { 
+    if(event.target.classList.contains("goOrigin"))
+      this.goOrigin(); 
+  }
+  goOrigin() {
+    console.log('origen');
+  }
  
   private map;
   constructor(private markerService: MarkerService) {
@@ -49,15 +58,33 @@ export class LeafletComponent implements AfterViewInit {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
+  
 
   private initMap(): void {
     this.map = L.map('map', {
       center: [ 39.399872, -8.224454 ],
       zoom: 7
+
     });
     this.tiles.addTo(this.map)
   }
+  
 
+  clicked(){
+    console.log("clicked");
+  }
+
+  layerClickHandler (e) {
+    console.log("Entrou no metodo")
+    var marker = e.target,
+        properties = e.target.feature.properties;
+    
+    var buttonSubmit = L.DomUtil.get('button-submit');
+    L.DomEvent.addListener(buttonSubmit, 'click', function (e) {
+      marker.closePopup();
+    });
+  
+  }
  
 
 }
