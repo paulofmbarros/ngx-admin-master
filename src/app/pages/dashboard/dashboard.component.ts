@@ -145,11 +145,11 @@ export class DashboardComponent implements OnDestroy {
         this.sensorsCards=this.sensorCardsByThemes[theme.name];
     });
 
-    this.solarService.getSolarData()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((data) => {
-        this.solarValue = data;
-      });
+    // this.solarService.getSolarData()
+    //   .pipe(takeWhile(() => this.alive))
+    //   .subscribe((data) => {
+    //     this.solarValue = data;
+    //   });
   }
 
   ngOnDestroy() {

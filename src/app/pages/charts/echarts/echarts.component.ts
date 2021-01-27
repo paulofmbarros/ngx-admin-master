@@ -11,12 +11,12 @@ export class EchartsComponent implements OnInit {
   /**
    *
    */
+  tab:String;
+  
   constructor(private route: ActivatedRoute ) {
     
   }
   ngOnInit(){
-    console.log("Entrou no on Init")
-    var tab=this.route.snapshot.queryParamMap.get('tab');
-    console.log(tab);
+    this.tab=this.route.snapshot.queryParamMap.get('tab');
   }
 }
