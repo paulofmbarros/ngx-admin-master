@@ -1,3 +1,4 @@
+import { ErrorstableComponent } from './errorstable/errorstable.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -78,6 +79,10 @@ const routes: Routes = [{
       path: 'miscellaneous',
       loadChildren: () => import('./miscellaneous/miscellaneous.module')
         .then(m => m.MiscellaneousModule),
+    },
+    {
+      path: 'errorstable',
+      component:ErrorstableComponent
     },
     {
       path: '',

@@ -9,6 +9,7 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+import { ErrorstableComponent } from './pages/errorstable/errorstable.component';
 
 export const routes: Routes = [
   {
@@ -47,7 +48,8 @@ export const routes: Routes = [
     ],
   },
 
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
 ];
 

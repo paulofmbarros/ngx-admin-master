@@ -49,7 +49,6 @@ export class LeafletComponent implements AfterViewInit, OnInit {
    
   }
   ngOnInit(): void {
-    console.log("Entrou no onInit");
     this.toastrService.showErrorToastr();
     
 
