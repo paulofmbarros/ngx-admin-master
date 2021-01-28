@@ -24,6 +24,11 @@ const routes: Routes = [{
       path: 'addNewPlace',
       component: AddNewPlaceComponent,
     },
+    // {
+    //   path: 'login',
+    //   loadChildren: () => import('./auth/auth.module')
+    //     .then(m => m.NgxAuthModule),
+    // },
     {
       path: 'layout',
       loadChildren: () => import('./layout/layout.module')
@@ -76,7 +81,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'login',
       pathMatch: 'full',
     },
     {
