@@ -160,20 +160,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'map-outline',
     children: [
       {
-        title: 'Google Maps',
-        link: '/pages/maps/gmaps',
-      },
-      {
         title: 'Leaflet Maps',
         link: '/pages/maps/leaflet',
       },
       {
         title: 'Bubble Maps',
         link: '/pages/maps/bubble',
-      },
-      {
-        title: 'Search Maps',
-        link: '/pages/maps/searchmap',
       },
     ],
   },

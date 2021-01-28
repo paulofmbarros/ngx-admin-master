@@ -1,4 +1,6 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { ToastrService } from './../../../@core/mock/toastr.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { MarkerService } from 'app/@core/mock/marker.service';
 
 import * as L from 'leaflet';
@@ -31,7 +33,7 @@ L.Marker.prototype.options.icon = iconDefault;
     </nb-card>
   `,
 })
-export class LeafletComponent implements AfterViewInit {
+export class LeafletComponent implements AfterViewInit, OnInit {
   @HostListener('document:click', ['$event']) 
   clickout(event) 
   { 
@@ -43,8 +45,14 @@ export class LeafletComponent implements AfterViewInit {
   }
  
   private map;
-  constructor(private markerService: MarkerService) {
+  constructor(private markerService: MarkerService, private toastrService:ToastrService) {
    
+  }
+  ngOnInit(): void {
+    console.log("Entrou no onInit");
+    this.toastrService.openRandomToast();
+    
+
   }
 
   ngAfterViewInit():void {
@@ -68,23 +76,9 @@ export class LeafletComponent implements AfterViewInit {
     });
     this.tiles.addTo(this.map)
   }
-  
 
-  clicked(){
-    console.log("clicked");
-  }
 
-  layerClickHandler (e) {
-    console.log("Entrou no metodo")
-    var marker = e.target,
-        properties = e.target.feature.properties;
-    
-    var buttonSubmit = L.DomUtil.get('button-submit');
-    L.DomEvent.addListener(buttonSubmit, 'click', function (e) {
-      marker.closePopup();
-    });
   
-  }
  
 
 }
