@@ -17,14 +17,14 @@ export class SmartTableService extends SmartTableData {
     dateRaised: '19/03/2020',
     dateSolved: '19/03/2020',
     isSolved: 'Yes',
-    errorDescription: 'Valor de Temperatura demasiado alto',
+    errorDescription: 'Temperature value too high',
   }, {
     id: 3,
     location: 'Quinta da Laje',
     dateRaised: '18/03/2020',
     dateSolved: '19/03/2020',
     isSolved: 'Yes',
-    errorDescription: 'Valor de Humidade demasiado alto',
+    errorDescription: 'Humidity value too high',
   }, {
     id: 4,
     location: 'Quinta de Cepeda',
@@ -38,7 +38,7 @@ export class SmartTableService extends SmartTableData {
     dateRaised: '17/03/2020',
     dateSolved: '19/03/2020',
     isSolved: 'Yes',
-    errorDescription: 'Valor de Temperatura demasiado baixo',
+    errorDescription: 'Temperature value too low',
   }, {
     id: 6,
     location: 'Parque da cidade de Paredes',
@@ -59,14 +59,14 @@ export class SmartTableService extends SmartTableData {
     dateRaised: '13/03/2020',
     dateSolved: '16/03/2020',
     isSolved: 'Yes',
-    errorDescription: 'Valor de Temeratura demasiado alto',
+    errorDescription: 'Temperature value too high',
   }, {
     id: 9,
     location: 'Parque do quadrado',
     dateRaised: '12/03/2020',
     dateSolved: '19/03/2020',
     isSolved: 'Yes',
-    errorDescription: 'Valor de Temperatura nao reconhecido',
+    errorDescription: 'Temperature value unknown',
   }, {
     id: 10,
     location: 'Quintal da Avo Maria',
@@ -87,7 +87,7 @@ export class SmartTableService extends SmartTableData {
     dateRaised: '9/03/2020',
     dateSolved: '10/03/2020',
     isSolved: 'Yes',
-    errorDescription: 'Valor de Humidade não reconhecido'
+    errorDescription: 'Humidity value unknown'
   // }, {
   //   id: 13,
   //   location: 'Haik',
