@@ -17,9 +17,9 @@ constructor(private toastrService: NbToastrService) { }
 
 config: NbToastrConfig;
 
-  index = 1;
+  index = 5;
   destroyByClick = true;
-  duration = 2000;
+  duration = 0;
   hasIcon = true;
   position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
   preventDuplicates = false;
@@ -47,7 +47,7 @@ config: NbToastrConfig;
   ];
 
   quotes = [
-    { title: null, body: 'We rock at Angular' },
+    { title: "ERROR", body: 'Something went wrong in one of sensores, please see on notifications' },
     { title: null, body: 'Titles are not always needed' },
     { title: null, body: 'Toastr rock!' },
   ];
@@ -56,6 +56,17 @@ config: NbToastrConfig;
     this.showToast(this.status, this.title, this.content);
   }
 
+
+  showErrorToastr(){
+    const typeIndex = 4;
+    const quoteIndex = 0;
+    const type = this.types[typeIndex];
+    const quote = this.quotes[quoteIndex];
+    this.showToast(type, quote.title, quote.body);
+
+
+
+  }
   openRandomToast () {
     const typeIndex = Math.floor(Math.random() * this.types.length);
     const quoteIndex = Math.floor(Math.random() * this.quotes.length);
@@ -74,12 +85,12 @@ config: NbToastrConfig;
       position: this.position,
       preventDuplicates: this.preventDuplicates,
     };
-    const titleContent = title ? `. ${title}` : '';
+    const titleContent = title ? ` ${title}` : '';
 
     this.index += 1;
     this.toastrService.show(
       body,
-      `Toast ${this.index}${titleContent}`,
+      `${titleContent}`,
       config);
   }
 
