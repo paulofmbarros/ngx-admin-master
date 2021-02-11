@@ -40,7 +40,7 @@ export class LoginComponent{
       this.errors = [];
       this.messages = [];
       this.submitted = true;
-      this.router.navigate(['/pages/dashboard'])
+      this.router.navigate(['/pages/maps/leaflet'])
       // this.service.authenticate(this.strategy, this.user).subscribe((result: NbAuthResult) => {
       //   this.submitted = false;
   

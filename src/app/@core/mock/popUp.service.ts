@@ -9,7 +9,7 @@ constructor() { }
 
 makeCapitalPopup(data: any): string {
   return `<div>Name: ${ data.properties["name"] }</div> 
-          <div>State: ${ data.properties["state"] }</div>
+          <div>City: ${ data.properties["city"] }</div>
           <button class="edit" type="button">See Details</button>
           `
 }
