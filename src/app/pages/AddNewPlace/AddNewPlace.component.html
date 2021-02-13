@@ -1,4 +1,3 @@
-
 <div class="row">
   <div class="col-md-6">
     <nb-card>
@@ -6,54 +5,61 @@
       <nb-card-body>
         <form [formGroup]="novoTerrenoForm" (ngSubmit)="submeterLeitor(novoTerrenoForm.value)">
           <div class="form-group row">
-            <label for="inputEmail1" class="label col-sm-3 col-form-label">Rua</label>
+            <label for="inputEmail1" class="label col-sm-3 col-form-label">Street</label>
             <div class="col-sm-9">
-              <input nbInput fullWidth id="inputEmail1" formControlName="Rua" placeholder="Rua">
+              <input nbInput fullWidth id="inputEmail1" formControlName="Rua" placeholder="Street">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword2" class="label col-sm-3 col-form-label">Numero de Porta</label>
+            <label for="inputPassword2" class="label col-sm-3 col-form-label">Door Number</label>
             <div class="col-sm-9">
-              <input type="number" nbInput fullWidth id="inputPassword2" formControlName="NumeroDePorta" placeholder="Numero de Porta">
+              <input type="number" nbInput fullWidth id="inputPassword2" formControlName="NumeroDePorta"
+                placeholder="Door Number">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword2" class="label col-sm-3 col-form-label">Codigo Postal</label>
+            <label for="inputPassword2" class="label col-sm-3 col-form-label">Postal Code</label>
             <div class="col-sm-9">
-              <input nbInput fullWidth id="inputPassword2" formControlName="CodigoPostal" placeholder="Codigo Postal">
+              <input nbInput fullWidth id="inputPassword2" formControlName="CodigoPostal" placeholder="Postal Code">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword2" class="label col-sm-3 col-form-label">Concelho</label>
+            <label for="inputPassword2" class="label col-sm-3 col-form-label">City</label>
             <div class="col-sm-9">
-              <input nbInput fullWidth id="inputPassword2" formControlName="Concelho" placeholder="Concelho">
+              <input nbInput fullWidth id="inputPassword2" formControlName="Concelho" placeholder="City">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword2" class="label col-sm-3 col-form-label">Distrito</label>
+            <label for="inputPassword2" class="label col-sm-3 col-form-label">District</label>
             <div class="col-sm-9">
-              <input nbInput fullWidth id="inputPassword2" formControlName="Distrito" placeholder="Distrito">
+              <input nbInput fullWidth id="inputPassword2" formControlName="Distrito" placeholder="District">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-3 label">Irá implementar sensores reais no terreno?</label>
+            <label class="col-sm-3 label">Do you want to implement real sensors in the field</label>
             <div class="col-sm-9">
               <nb-radio-group formControlName="IsRealSensor">
-                <nb-radio value="Sim">Sim</nb-radio>
-                <nb-radio value="Nao">Não</nb-radio>
-                <nb-radio disabled>Ainda não sei</nb-radio>
+                <nb-radio (click)="enableCheckBoxes('sim')"  value="Sim">Yes</nb-radio>
+                <nb-radio (click)="enableCheckBoxes('nao')" value="Nao">No</nb-radio>
+                <nb-radio disabled>I dont know yet</nb-radio>
               </nb-radio-group>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-3 label">Em quantas zonas pretende dividir o terreno?</label>
-            <div class="col-sm-9">
-              <nb-radio-group formControlName="NumeroDeZonas">
+            <label class="col-sm-3 label">What sensors do you want to implement</label>
+            <div class="col-md-6">
+              <!-- <nb-radio-group formControlName="NumeroDeZonas">
                 <nb-radio value=1>1</nb-radio>
                 <nb-radio value=2>2</nb-radio>
                 <nb-radio value=3>3</nb-radio>
                 <nb-radio value=4>4</nb-radio>
-              </nb-radio-group>
+              </nb-radio-group> -->
+
+              <div *ngFor="let item of checkboxesDataList">
+                <nb-checkbox [disabled]="!enableCheckBox" (checkedChange)="changeSelection($event, item.id)"> {{item.label}} </nb-checkbox>
+              </div>
+           
+              
             </div>
           </div>
           <button type="submit" nbButton status="primary">Submit</button>
@@ -100,5 +106,4 @@
         </form>
       </nb-card-body>
     </nb-card>
-
-
+  </div>
