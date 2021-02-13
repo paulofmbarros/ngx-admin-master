@@ -1,6 +1,6 @@
 import { DashboardServiceService } from './../../../@core/mock/dashboardService.service';
 import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DashboardDataModel } from 'app/@core/models/dashboardDataModel';
 
 @Component({
@@ -11,14 +11,14 @@ import { DashboardDataModel } from 'app/@core/models/dashboardDataModel';
 
 export class WeatherComponent implements OnInit {
 
+  @Input() cityName:string
+
   currentDate= new Date();
-  dashboardata:DashboardDataModel=new DashboardDataModel();
-constructor(private datePipe: DatePipe, private dashservice:DashboardServiceService ){
+constructor(private datePipe: DatePipe){
   
   }
 
   ngOnInit(){
 
-    this.dashboardata=this.dashservice.getDashboardData(1);
   }
 }
