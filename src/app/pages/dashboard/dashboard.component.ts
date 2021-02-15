@@ -169,6 +169,7 @@ export class DashboardComponent implements OnDestroy {
     //   });
   }
   ngOnInit() {
+    console.log("Entrou Aqui")
     this.getDashboardData(1)
 
   }
