@@ -40,9 +40,9 @@ export class EchartsRadarComponent implements AfterViewInit, OnDestroy {
             { name: 'Zone 1', max: 6500 },
             { name: 'Zone 2', max: 16000 },
             { name: 'Zone 3', max: 30000 },
-            { name: 'Development', max: 38000 },
-            { name: 'Zone 4', max: 52000 },
-            { name: 'Marketing', max: 25000 },
+            { name: 'Zone 4', max: 38000 },
+            { name: 'Zone 5', max: 52000 },
+            { name: 'Zone 6', max: 25000 },
           ],
           splitArea: {
             areaStyle: {
